@@ -13,6 +13,7 @@
 +(GerenciadorSenhas *)sharedInstance;
 -(int)criarSenha:(NSString *)senha;
 -(BOOL)validarSenha:(NSString *)senha;
+-(void)atualizarSenha:(NSString *)novaSenha;
 -(void)removerSenha;
 
 @end

@@ -11,10 +11,12 @@
 @implementation GerenciadorSenhas
 
 static GerenciadorSenhas *instancia = nil;
+static   NSMutableDictionary *dicionarioKeychain = nil;
 
 +(GerenciadorSenhas *)sharedInstance {
     if (!instancia) {
         instancia = [[super allocWithZone:nil] init];
+        [instancia criarDicionario];
     }
     return instancia;
 }
@@ -27,8 +29,9 @@ static GerenciadorSenhas *instancia = nil;
    |        Reimplementar todos os métodos abaixo!             |
    -------------------------------------------------------------
 */
--(NSDictionary *)dicionarioKeychain {
-    return nil;
+
+-(void)criarDicionario {
+
 }
 
 -(int)criarSenha:(NSString *)senha{
@@ -37,6 +40,10 @@ static GerenciadorSenhas *instancia = nil;
 
 -(BOOL)validarSenha:(NSString *)senha{
     return YES;
+}
+
+-(void)atualizarSenha:(NSString *)novaSenha{
+
 }
 
 -(void)removerSenha{

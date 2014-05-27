@@ -62,6 +62,7 @@ static UIWindow *window = nil;
 }
 
 -(void)removerSenha {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(ocultarMensagem) object:self];
     [gerenciadorSenhas removerSenha];
     txtMensagem.hidden = NO;
     [self performSelector:@selector(ocultarMensagem) withObject:self afterDelay:3];

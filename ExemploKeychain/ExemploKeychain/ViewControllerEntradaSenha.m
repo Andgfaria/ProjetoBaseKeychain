@@ -65,6 +65,7 @@
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(resetarUI) object:self];
     [self validarSenha];
     [textField resignFirstResponder];
     [self performSelector:@selector(resetarUI) withObject:self afterDelay:3];
@@ -72,7 +73,7 @@
 }
 
 -(void)resetarUI {
-    txtMensagem.text = @"Criar Senha";
+    txtMensagem.text = @"Validar Senha";
     txtMensagem.textColor = [UIColor blackColor];
     txtEntradaSenha.text = @"";
 }
